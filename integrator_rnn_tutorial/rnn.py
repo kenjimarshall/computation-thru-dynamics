@@ -22,7 +22,7 @@ from functools import partial
 
 import jax.numpy as np
 from jax import grad, jit, lax, random, vmap
-from jax.experimental import optimizers
+from jax.example_libraries import optimizers
 
 import matplotlib.pyplot as plt
 import numpy as onp  # original CPU-backed NumPy

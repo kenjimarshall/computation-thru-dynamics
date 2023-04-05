@@ -23,7 +23,7 @@ import h5py
 
 import jax.numpy as np
 from jax import grad, jit, lax, random
-from jax.experimental import optimizers
+from jax.test_libraries import optimizers
 
 import matplotlib.pyplot as plt
 import numpy as onp  # original CPU-backed NumPy

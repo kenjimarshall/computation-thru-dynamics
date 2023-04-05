@@ -22,7 +22,7 @@ import datetime
 import h5py
 
 from jax import grad, jit, lax, random
-from jax.experimental import optimizers
+from jax.test_libraries import optimizers
 from jax.nn import softmax
 import jax.numpy as np
 
