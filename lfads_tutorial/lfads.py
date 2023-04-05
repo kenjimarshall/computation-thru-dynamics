@@ -21,7 +21,7 @@ from functools import partial
 
 import jax.numpy as np
 from jax import jit, lax, random, vmap
-from jax.test_libraries import optimizers
+from jax.example_libraries import optimizers
 
 import lfads_tutorial.distributions as dists
 import lfads_tutorial.utils as utils

@@ -24,7 +24,7 @@ from absl import logging
 from jax import grad
 from jax import jit
 from jax import random
-from jax.test_libraries import optimizers
+from jax.example_libraries import optimizers
 import jax.numpy as np
 import lfads_cc.lfads as lfads
 import lfads_cc.utils as utils
