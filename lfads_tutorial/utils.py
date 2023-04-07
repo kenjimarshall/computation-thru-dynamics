@@ -159,3 +159,11 @@ def read_file(data_fname):
   except IOError:
     print("Cannot open %s for reading." % data_fname)
     raise
+
+class hashabledict(dict):
+  def __key(self):
+    return tuple((k,self[k]) for k in sorted(self))
+  def __hash__(self):
+    return hash(self.__key())
+  def __eq__(self, other):
+    return self.__key() == other.__key()
