@@ -120,8 +120,8 @@ def optimize_lfads(key, init_params, lfads_hps, lfads_opt_hps,
   # Begin optimziation loop.
   all_tlosses = []
   all_elosses = []
-  lfads_hp = utils.hashabledict(lfads_hp)
-  lfads_opt_hp = utils.hashabledict(lfads_opt_hp)
+  lfads_hp = utils.hashabledict(lfads_hps)
+  lfads_opt_hp = utils.hashabledict(lfads_opt_hps)
 
   # Build some functions used in optimization.
   kl_warmup_fun = get_kl_warmup_fun(lfads_opt_hps)
