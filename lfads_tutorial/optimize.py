@@ -120,6 +120,8 @@ def optimize_lfads(key, init_params, lfads_hps, lfads_opt_hps,
   # Begin optimziation loop.
   all_tlosses = []
   all_elosses = []
+  lfads_hp = utils.hashabledict(lfads_hp)
+  lfads_opt_hp = utils.hashabledict(lfads_opt_hp)
 
   # Build some functions used in optimization.
   kl_warmup_fun = get_kl_warmup_fun(lfads_opt_hps)
@@ -157,9 +159,7 @@ def optimize_lfads(key, init_params, lfads_hps, lfads_opt_hps,
     key, tkey, dtkey, dekey = random.split(random.fold_in(key, oidx), 4)
     opt_state = optimize_lfads_core_jit(tkey, batch_idx_start,
                                         print_every, update_w_gc, kl_warmup_fun,
-                                        opt_state, 
-                                        utils.hashabledict(lfads_hps),
-                                        utils.hashabledict(lfads_opt_hps),
+                                        opt_state, lfads_hps, lfads_opt_hps,
                                         train_data)
     batch_time = time.time() - start_time
 
